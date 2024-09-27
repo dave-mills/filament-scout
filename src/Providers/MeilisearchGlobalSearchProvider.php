@@ -33,6 +33,8 @@ class MeilisearchGlobalSearchProvider implements GlobalSearchProvider
                     $options['highlightPreTag'] = '<strong>';
                     $options['highlightPostTag'] = '</strong>';
 
+                    $options['limit'] = (int) config('kainiklas-filament-scout.scout_search_limit', 50);
+
                     return $meiliSearch->search($query, $options);
                 }
             );
